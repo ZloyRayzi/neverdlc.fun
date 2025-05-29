@@ -2,58 +2,75 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>NeverDLC</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+  <title>NeverDLC — Главная</title>
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #00ffc3;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 900px; width: 100%;
+    background: #111; border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 25px #00ffc355;
+  }
+  .nav {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .nav button {
+    background: transparent; border: 2px solid #00ffc3; color: #00ffc3;
+    padding: 12px 28px; border-radius: 10px;
+    font-size: 16px; cursor: pointer; transition: 0.3s;
+  }
+  .nav button:hover {
+    background: #00ffc3; color: #0d0d0d;
+    box-shadow: 0 0 15px #00ffc3;
+  }
+  h1 {
+    text-align: center; font-size: 32px; margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ffc377;
+  }
+  .intro {
+    text-align: center; font-size: 18px; color: #c2fff3;
+    max-width: 700px; margin: 0 auto; line-height: 1.6;
+  }
+  input {
+    width: 100%; padding: 10px; margin-bottom: 15px;
+    background: #1a1a1a; border: 1px solid #00ffc3; color: #00ffc3;
+    border-radius: 8px;
+  }
+  button {
+    padding: 12px 20px;
+    background: transparent; border: 2px solid #00ffc3; color: #00ffc3;
+    border-radius: 10px; cursor: pointer; transition: 0.3s;
+  }
+  button:hover {
+    background: #00ffc3; color: #0d0d0d;
+    box-shadow: 0 0 10px #00ffc3;
+  }
+</style>
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      color: #00ff88;
-      font-family: 'Share Tech Mono', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .centered {
-      text-align: center;
-    }
-
-    .glow {
-      font-size: 48px;
-      text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-      animation: pulse 2s infinite alternate;
-    }
-
-    @keyframes pulse {
-      from { text-shadow: 0 0 5px #00ff88; }
-      to { text-shadow: 0 0 20px #00ff88; }
-    }
-
-    .typewriter {
-      font-size: 18px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00ff88;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards;
-      margin-top: 20px;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-  </style>
 </head>
 <body>
-  <div class="centered">
-    <h1 class="glow">NeverDLC</h1>
-    <p class="typewriter">здесь ты получишь то, что скрыто</p>
+  <div class="container">
+    <div class="nav">
+      <button onclick="location.href='download.html'">Скачать</button>
+      <button onclick="location.href='login.html'">Вход</button>
+      <button onclick="location.href='register.html'">Регистрация</button>
+      <button onclick="location.href='cabinet.html'">Личный кабинет</button>
+    </div>
+    <h1>Добро пожаловать в NeverDLC</h1>
+    <div class="intro">
+      <p>NeverDLC — бесплатный Minecraft чит-клиент с автообновлениями, защитой от банов и всеми нужными функциями. Начни доминировать уже сейчас!</p>
+    </div>
   </div>
 </body>
 </html>

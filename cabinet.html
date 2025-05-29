@@ -1,83 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Кабинет — NeverDLC</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Личный кабинет — NeverDLC</title>
   <style>
-    .top-panel {
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #00ff88;
+      font-family: 'Share Tech Mono', monospace;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
       margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
-    .user-info {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .nav-buttons button {
-      padding: 10px 15px;
-    }
-
-    .shop {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .product {
-      padding: 15px;
+    .nav button {
+      background: #0d0d0d;
       border: 1px solid #00ff88;
-      text-align: left;
-      background: #000;
+      color: #00ff88;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav button:hover {
+      background-color: #00ff88;
+      color: #0d0d0d;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile {
+      text-align: center;
+      background: #121212;
+      padding: 30px 20px;
+      border-radius: 12px;
+      border: 1px solid #00ff88;
+      box-shadow: 0 0 15px #00ff8877;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #00ff88;
+      object-fit: cover;
+    }
+
+    .profile p {
+      font-size: 20px;
+      margin: 12px 0;
+    }
+
+    .tg-link {
+      margin-top: 25px;
+    }
+
+    .tg-link a {
+      color: #00ff88;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .tg-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="top-panel">
-      <div class="user-info">
-        <div>👤 <strong>Ник: Player1337</strong></div>
-        <div>💰 Баланс: <strong>0₽</strong></div>
-      </div>
-      <div class="nav-buttons">
-        <button>Купить</button>
-        <button>Магазин</button>
-        <button onclick="location.href='login.html'">Выйти</button>
-      </div>
+    <div class="nav">
+      <button onclick="location.href='index.html'">Главная</button>
+      <button onclick="location.href='download.html'">Скачать</button>
+      <button onclick="location.href='login.html'">Выход</button>
     </div>
 
-    <div class="shop">
-      <div class="product">
-        <strong>XRay</strong><br>
-        Видит руду сквозь блоки.<br>
-        <button>Скачать</button>
-      </div>
-      <div class="product">
-        <strong>KillAura</strong><br>
-        Убивает врагов на авто.<br>
-        <button>Скачать</button>
-      </div>
-      <div class="product">
-        <strong>FlyHack</strong><br>
-        Летай как бог.<br>
-        <button>Скачать</button>
-      </div>
-      <div class="product">
-        <strong>SpeedHack</strong><br>
-        Беги быстрее всех.<br>
-        <button>Скачать</button>
+    <h1>Личный кабинет</h1>
+
+    <div class="profile">
+      <img id="avatar" src="" alt="Avatar" />
+      <p><strong>UID:</strong> <span id="uid">Загрузка...</span></p>
+      <p><strong>Логин:</strong> <span id="login">Загрузка...</span></p>
+      <div class="tg-link">
+        <a href="https://t.me/never_dlc" target="_blank" rel="noopener noreferrer">Поддержка в Telegram</a>
       </div>
     </div>
   </div>
+
+  <script>
+    const uid = localStorage.getItem('uid');
+    const login = localStorage.getItem('login');
+
+    if (!uid || !login) {
+      // Если нет UID или логина — редирект на страницу входа
+      window.location.href = 'login.html';
+    } else {
+      // Показываем данные
+      document.getElementById('uid').textContent = uid;
+      document.getElementById('login').textContent = login;
+      document.getElementById('avatar').src = `https://i.pravatar.cc/150?u=${uid}`;
+    }
+  </script>
 </body>
 </html>
+
 
