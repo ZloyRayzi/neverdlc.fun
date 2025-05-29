@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>NeverDLC</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #00ff88;
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .glow {
+      font-size: 48px;
+      text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 5px #00ff88; }
+      to { text-shadow: 0 0 20px #00ff88; }
+    }
+
+    .typewriter {
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff88;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards;
+      margin-top: 20px;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="centered">
+    <h1 class="glow">NeverDLC</h1>
+    <p class="typewriter">здесь ты получишь то, что скрыто</p>
+  </div>
+</body>
+</html>

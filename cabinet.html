@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Кабинет — NeverDLC</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .top-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .user-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 15px;
+    }
+
+    .shop {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      padding: 15px;
+      border: 1px solid #00ff88;
+      text-align: left;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-panel">
+      <div class="user-info">
+        <div>👤 <strong>Ник: Player1337</strong></div>
+        <div>💰 Баланс: <strong>0₽</strong></div>
+      </div>
+      <div class="nav-buttons">
+        <button>Купить</button>
+        <button>Магазин</button>
+        <button onclick="location.href='login.html'">Выйти</button>
+      </div>
+    </div>
+
+    <div class="shop">
+      <div class="product">
+        <strong>XRay</strong><br>
+        Видит руду сквозь блоки.<br>
+        <button>Скачать</button>
+      </div>
+      <div class="product">
+        <strong>KillAura</strong><br>
+        Убивает врагов на авто.<br>
+        <button>Скачать</button>
+      </div>
+      <div class="product">
+        <strong>FlyHack</strong><br>
+        Летай как бог.<br>
+        <button>Скачать</button>
+      </div>
+      <div class="product">
+        <strong>SpeedHack</strong><br>
+        Беги быстрее всех.<br>
+        <button>Скачать</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
